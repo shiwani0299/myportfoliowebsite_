@@ -819,7 +819,7 @@
 
         /* Responsive Website Design */
         /* 980px  */
-        @media (max-width: 62em) {
+        @media (max-width: 1200px) {
 
             #moon-icon {
                 z-index: 1;
