@@ -1,0 +1,1015 @@
+        /* Google Fonts Link */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        /* font-family: "Poppins", sans-serif */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+        /* font-family: "Noto Serif", serif; */
+
+
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Work Sans", sans-serif;
+            list-style: none;
+            /* border: 1px solid #f5f5f5; */
+            /* border: 1px solid black; */
+        }
+
+        :root {
+            --primary-color: #F5F5F5;
+            --secondary-color: #000000;
+            --navbar-color: #f5f5f5;
+            --cursor-color: #000000;
+            --box-shadow-color: rgba(0, 0, 0, 0.5);
+            /* --profession-card-color: #6F2DA8; */
+            /* --profession-card-color: #200735; */
+            --profession-bg-color: #e6e6fa;
+            --profession-card-color: #000115;
+
+            /* --title-color: #000000; */
+        }
+
+        .dark-theme {
+            --primary-color: #000000;
+            --secondary-color: #F5F5F5;
+            /* --navbar-color: #240000; */
+            --navbar-color: #000115;
+            --cursor-color: #F5F5F5;
+            --box-shadow-color: rgba(255, 255, 255, 0.5);
+            --profession-bg-color: #000115;
+            --profession-card-color: #e6e6fa;
+
+            /* --title-color: #F5F5F5; */
+        }
+
+        html {
+            font-size: 62.5%;
+            /* 1rem = 10px */
+            overflow-x: hidden;
+            cursor: none;
+        }
+
+        /* Common Styling  Start */
+        h1,
+        h2,
+        p {
+            cursor: pointer;
+        }
+
+
+        .section .animate {
+
+            transition: 1s;
+        }
+
+        .heading {
+            width: 100%;
+            height: auto;
+        }
+
+        .heading h2 {
+            font-family: "Noto Serif", serif;
+            font-size: 7rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+
+
+        /* Common Styling End */
+
+        body {
+            /* overflow-x: hidden; */
+            width: 100vw;
+            height: 100vh !important;
+        }
+
+        /* Hide Scrollbar */
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        .cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            /* border: 2px solid var(--cursor-color); */
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: .1s;
+            /* background-color: var(--cursor-color); */
+            box-shadow: 0 0 20px var(--cursor-color),
+                0 0 20px var(--cursor-color),
+                0 0 20px var(--cursor-color);
+        }
+
+        .cursor-2 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 10px;
+            /* border: 1px solid var(--cursor-color); */
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: .15s;
+            background-color: var(--cursor-color);
+            /* box-shadow: 0 0 20px var(--cursor-color),
+                0 0 20px var(--cursor-color),
+                0 0 20px var(--cursor-color); */
+        }
+
+
+        #moon-icon {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            cursor: pointer;
+            font-size: 3rem;
+            color: var(--secondary-color);
+            transform: rotate(320deg) scale(1.5);
+            z-index: 99;
+        }
+
+
+        .wrapper {
+            position: relative;
+            z-index: 0;
+        }
+
+        /* ********* Section 1 Header Section Styling Start ********* */
+
+        .header {
+            width: 100%;
+            height: 15vh;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .logo p {
+            font-family: "Noto Serif", serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        .navbar {
+            width: 70%;
+            display: flex;
+        }
+
+        .navbar .navlist {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 4rem;
+            padding: 0 4rem;
+        }
+
+
+        .navlink:link,
+        .navlink:visited {
+            display: inline-block;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-family: "Poppins", sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            transition: all 0.3s;
+            letter-spacing: 1px;
+        }
+
+        .navlink:hover,
+        .navlink:active {
+            font-size: 2rem;
+            font-weight: 800 !important;
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            cursor: none !important;
+        }
+
+        .navlink:hover~.cursor {
+            transform: translate(-50%, -50%)scale(1.5) !important;
+            background-color: var(--secondary-color) !important;
+            opacity: 0.5;
+        }
+
+        .navlink:hover~.cursor-2 {
+            opacity: 0;
+        }
+
+        .mobile-navbar-btn {
+            display: none;
+            background: transparent;
+            cursor: pointer;
+            border: none !important;
+            padding-right: 40px;
+        }
+
+        .mobile-nav-icon {
+            font-size: 3.5rem;
+            /* color: #212529; */
+        }
+
+        .mobile-nav-icon[name="menu-outline"] {
+            color: var(--secondary-color);
+        }
+
+        .mobile-nav-icon[name="close-outline"] {
+            display: none;
+            color: var(--secondary-color);
+        }
+
+        /* ********* Section 1 Header Section Styling End ********* */
+
+
+        /* *********************************************************** */
+        /* *********************************************************** */
+        /* *********************************************************** */
+
+
+        /* ********* Section 2 Main Section Styling Start ********* */
+
+        .main-section {
+            width: 100%;
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+
+        #background-video-light {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            display: block;
+        }
+
+        #background-video-dark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            display: none;
+        }
+
+        .main-para p {
+            font-family: "Poppins", sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            color: var(--secondary-color);
+            z-index: 999;
+        }
+
+
+        .main-img {
+            z-index: 99;
+        }
+
+
+        .main-img img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 20px 0;
+
+        }
+
+        #light-img {
+            display: block;
+        }
+
+        #dark-img {
+            display: none;
+        }
+
+        .title {
+            z-index: 999;
+        }
+
+        .title h1 {
+            font-family: "Noto Serif", serif;
+            font-size: 12rem;
+            font-weight: 700;
+            text-align: center;
+            text-transform: uppercase;
+            color: var(--secondary-color);
+        }
+
+        .title p {
+            font-family: "Poppins", sans-serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            text-transform: uppercase;
+            color: var(--secondary-color);
+        }
+
+        .fa-chevron-down {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            right: 50%;
+            font-size: 10rem;
+            color: var(--secondary-color);
+        }
+
+        #scroll-about {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            right: 50%;
+        }
+
+        .fa-chevron-down:active,
+        .fa-chevron-down:focus,
+        .fa-chevron-down:hover {}
+
+
+        .main-section .animate {
+            /* transform: translateX(-100%); */
+            transform: translateY(-150%);
+            /* transform: scale(.7); */
+        }
+
+        .main-section.show-animate .animate {
+            /* transform: translateX(0); */
+            transform: translateY(0);
+            /* transform: scale(1); */
+        }
+
+        /* .title:hover ~ .cursor {
+            transform: translate(-50%, -50%) scale(1.5) ;
+            background-color: #000115;
+            opacity: 0.5;
+        }
+
+        .title:hover ~ .cursor-2 {
+            opacity: 0;
+        } */
+
+        /* ********* Section 2 Main Section Styling End ********* */
+
+
+        /* *********************************************************** */
+        /* *********************************************************** */
+        /* *********************************************************** */
+
+
+        /* ********* Section 3 About Section Styling Start ********* */
+        .about-section {
+            width: 100%;
+            height: 100vh;
+            padding: 50px 100px 50px 100px;
+            background-color: var(--primary-color);
+            position: relative;
+            /* backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            background-color: rgba(17, 25, 40, 0.75); */
+            /* border-radius: 12px; */
+            /* border: 1px solid rgba(255, 255, 255, 0.125); */
+        }
+
+        .about-content {
+            height: 100%;
+            padding: 50px;
+
+        }
+
+        .about-content:hover {
+            /* box-shadow:0 0 50px 10px rgba(255, 255, 255, 0.4) ; */
+            /* transform: translateY(-10px);
+            transition: all .3s linear; */
+        }
+
+        /* .about-content .heading {
+            width: 100%;
+            height: auto;
+        } */
+
+
+        .heading h2:hover {
+            /* font-size: 5rem; */
+            /* transform: translate3d(10px, 0px, 10px);
+            text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
+            transition: all .3s linear; */
+        }
+
+        .about-content .about-para {
+            width: 100%;
+            height: auto;
+            padding: 30px 150px 100px 150px !important;
+        }
+
+        .about-para p {
+            font-family: "Poppins", sans-serif;
+            font-size: 1.8rem;
+            font-weight: 100;
+            text-align: justify;
+            color: var(--secondary-color);
+            line-height: 2;
+            word-spacing: 2px;
+
+        }
+
+        .about-para p span {
+            font-weight: 700;
+        }
+
+        .about-para p span:hover {
+            font-size: 2.4rem;
+            font-weight: 700;
+        }
+
+        #scroll-education {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            right: 50%;
+        }
+
+        .about-section .animate {
+            /* transform: translateX(150%); */
+            /* transform: translateY(100%); */
+            transform: scale(.7);
+        }
+
+        .about-section.show-animate .animate {
+            /* transform: translateX(0); */
+            /* transform: translateY(0); */
+            transform: scale(1);
+        }
+
+        /* .about-para p:hover {
+            font-size: 4rem;
+        } */
+
+        /* ********* Section 3 About Section Styling End ********* */
+
+
+        /* *********************************************************** */
+        /* *********************************************************** */
+        /* *********************************************************** */
+
+        /* ********* Section 4 Skills Section Styling Start ********* */
+
+        .skills-section {
+            width: 100%;
+            height: 100vh;
+            /* background-color: #FFFFFF; */
+            background-color: var(--primary-color);
+            padding: 100px 0;
+            
+        }
+
+        .skills-section .skills-content .heading h2 {
+
+        }
+
+        .skill-info {
+            margin-top: 50px;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 30px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+
+        .skill-icon {
+            justify-self: center;
+            font-size: 10rem;
+        }
+
+        .skill-icon:hover {
+            font-size: 20rem;
+        }
+
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.skill-info {
+    animation: scroll 10s linear infinite; /* Adjust duration as needed */
+}
+
+        #html {
+            color: orangered;
+        }
+
+        #css {
+            color: blue;
+        }
+
+        #js {
+            color: yellow;
+        }
+
+        #bts {
+            color: #4c0bce;
+        }
+
+        #react {
+            color: aqua;
+        }
+
+        #node {
+            color: green;
+        }
+
+        #fig {
+            color: var(--secondary-color);
+        }
+
+        #pen {
+            color: rebeccapurple;
+        }
+        /* ********* Section 4 Skills Section Styling End ********* */
+
+        /* *********************************************************** */
+        /* *********************************************************** */
+        /* *********************************************************** */
+
+        /* ********* Section 5 Profession Section Styling Start ********* */
+
+
+        .profession-section {
+            width: 100vw;
+            /* height: 100vh; */
+            height: auto;
+            background-color: var(--primary-color);
+            /* background-color: var(--profession-bg-color); */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 100px 0;
+        }
+
+        .profession-content {
+            width: 100%;
+            height: 80%;
+        }
+
+        .profession-content .heading h2 {
+            /* color: var(--profession-card-color); */
+        }
+
+        .profession-content .prof-info {
+            margin-top: 50px;
+            width: 100%;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            padding: 0 200px;
+        }
+
+        .profession-content .card {
+            /* flex: 1; */
+            height: 200px;
+            height: 100%;
+            padding: 80px 40px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 20px;
+            align-items: center;
+            /* background-color: rgb(253, 237, 253); */
+            background-color: var(--profession-card-color);
+            /* background-color: var(--profession-bg-color); */
+            /* background-color: lavender; */
+            border: 2px solid var(--box-shadow-color);
+        }
+
+        .profession-content .card:hover {
+            box-shadow: 0 0 10px 5px var(--box-shadow-color);
+            transform: translateY(-20px);
+            /* transition: all .3s linear; */
+        }
+
+
+        .profession-content .prof-info .card p {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            /* color: VAR(--secondary-color); */
+        }
+
+
+
+        .profession-content .prof-info .card h5 {
+            color: var(--primary-color);
+            /* color: VAR(--secondary-color); */
+            margin-bottom: 10px;
+        }
+
+        .profession-content .card ul {
+            padding: 30px;
+        }
+
+        .profession-content .card ul li {
+            font-family: "Poppins", sans-serif;
+            font-size: 1.6rem;
+            /* color: var(--secondary-color); */
+            color: var(--primary-color);
+            list-style: disc;
+            margin-bottom: 10px;
+            text-align: justify;
+
+        }
+
+
+        #scroll-educate {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            right: 50%;
+            z-index: 99;
+        }
+
+        .profession-section .animate {
+            transform: translateY(80%);
+        }
+
+        .profession-section.show-animate .animate {
+            transform: translateY(0);
+        }
+
+
+
+        /* ********* Section 5 Profession Section Styling End ********* */
+
+        /* *********************************************************** */
+        /* *********************************************************** */
+        /* *********************************************************** */
+
+        /* ********* Section 6 Educaton Section Styling Start ********* */
+        .education-section {
+            width: 100%;
+            height: 100vh;
+            /* padding: 50px 100px 50px 100px; */
+            background-color: var(--primary-color);
+            /* background-image: url("../Images/image10.gif");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat; */
+            /* background:
+                conic-gradient(at 50% 25%, #0000 75%, #ffffff 0), conic-gradient(at 50% 25%, #0000 75%, #ffffff 0) 100px 100px,
+                conic-gradient(at 50% 25%, #0000 75%, #ffffff 0) calc(2*100px) calc(2*100px),
+                conic-gradient(at 50% 25%, #0000 75%, #ffffff 0) calc(3*100px) calc(3*100px),
+                repeating-linear-gradient(135deg, rgba(193, 157, 197, 0.39) 0 12.5%, rgba(152, 93, 159, 0.39) 0 25%);
+            background-size: calc(4 * 100px) calc(4*100px); */
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border-bottom: 2px solid var(--secondary-color);
+            border-top: 2px solid var(--secondary-color);
+        }
+
+        #background-video-education {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        .education-section .education-content {
+            height: 60%;
+            padding: 0 50px 0 50px;
+        }
+
+        .education-content .card {
+            width: 100%;
+            height: 50%;
+            /* border: 1px solid #000000; */
+        }
+
+        .education-content .card .card-body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid #000000; */
+        }
+
+        h5,
+        p {
+            font-size: 3.5rem;
+            text-align: center;
+            color: var(--secondary-color);
+        }
+
+        h5 {
+            font-family: "Noto Serif", serif;
+        }
+
+        p {
+            font-family: "Poppins", sans-serif;
+        }
+
+        #scroll-work {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            right: 50%;
+        }
+
+        .education-section .animate {
+            transform: translateX(150%);
+            /* transform: translateY(100%); */
+            /* transform: scale(.7); */
+        }
+
+        .education-section.show-animate .animate {
+            transform: translateX(0);
+            /* transform: translateY(0); */
+            /* transform: scale(1); */
+        }
+
+        /* ********* Section 6 Education Section Styling End ********* */
+
+
+
+        /* *********************************************************** */
+        /* *********************************************************** */
+        /* *********************************************************** */
+
+        /* ********* Section 7 Profession Section Styling Start ********* */
+
+
+
+
+
+        /* ********* Section 7 Profession Section Styling End ********* */
+
+
+
+
+        /* *********************************************************** */
+        /* *********************************************************** */
+        /* *********************************************************** */
+
+        /* ********* Section 6 Profession Section Styling Start ********* */
+
+
+
+
+
+        /* ********* Section 6 Profession Section Styling End ********* */
+
+
+
+        /* *********************************************************** */
+        /* *********************************************************** */
+        /* *********************************************************** */
+
+        /* Responsive Website Design */
+        @media (max-width: 1200px) {}
+
+
+        /* Responsive Website Design */
+        /* 980px  */
+        @media (max-width: 62em) {
+
+            #moon-icon {
+                z-index: 1;
+            }
+
+            .mobile-navbar-btn {
+                /* display: block; */
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center;
+                z-index: 999;
+                color: #212529;
+            }
+
+            .header {
+                /* position: relative; */
+            }
+
+            .header .logo {
+                width: 40%;
+                padding: 10px !important;
+            }
+
+            .logo p {
+                font-size: 2.5rem;
+            }
+
+            .navbar {
+                /* display: none; */
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: var(--primary-color);
+
+
+
+                display: flex;
+                justify-content: center !important;
+                align-items: center !important;
+
+                /* to get the tranisition  */
+                transform: translateX(100%);
+                transition: all 0.5s linear;
+
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+
+                z-index: 999;
+                /* border: 1px solid #F5F5F5; */
+            }
+
+            .navlist {
+                width: 60%;
+                height: 100%;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center !important;
+
+                /* border: 1px solid #F5F5F5; */
+            }
+
+            .navlink {
+                font-size: 2rem !important;
+                color: var(--secondary-color) !important;
+                cursor: none;
+            }
+
+            .navlink:hover {
+                font-size: 2.2rem !important;
+                border-bottom: 2px solid var(--secondary-color);
+            }
+
+            .active .navbar {
+                transform: translateX(0);
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+            }
+
+
+            .mobile-navbar-btn {
+                padding-right: 30px !important;
+                border: 2px solid black !important;
+            }
+
+            .active .mobile-navbar-btn .mobile-nav-icon[name="close-outline"] {
+                display: block;
+            }
+
+            .active .mobile-navbar-btn .mobile-nav-icon[name="menu-outline"] {
+                display: none;
+            }
+
+
+            .title h1 {
+                font-size: 5rem;
+            }
+
+            .title p {
+                font-size: 2rem;
+            }
+
+            .about-section {
+                width: 100%;
+                height: auto;
+                padding: 50px 0;
+            }
+
+            .about-content {}
+
+            .about-content .about-para {
+                padding: 50px 60px 50px 60px !important;
+            }
+
+            .about-para p {
+                text-align: justify;
+            }
+
+            h5,
+            p {
+                font-size: 3rem;
+
+            }
+
+            .profession-section {
+                height: auto;
+                padding-bottom: 20px;
+            }
+
+            .profession-content {}
+
+            .profession-content .prof-info {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                padding: 0 100px;
+
+            }
+
+            .profession-section .animate {
+                transform: scale(.7);
+            }
+
+            .profession-section.show-animate .animate {
+                transform: scale(1);
+            }
+
+            .skill-info {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+        }
+
+        /* Below 560px  */
+        @media (max-width: 35em) {
+            .header {
+                padding: 0 2.4rem;
+            }
+
+            .header .logo {
+                width: 60%;
+                padding-left: 20px !important;
+            }
+
+            .logo h1 {
+                font-size: 2rem;
+            }
+
+
+            .mobile-navbar-btn {
+                padding: 5px !important;
+                border: 2px solid black !important;
+            }
+
+            .title h1 {
+                font-size: 3.5rem;
+            }
+
+            .title p {
+                font-size: 1.2rem;
+                font-weight: 600;
+                letter-spacing: 1px;
+            }
+
+
+            .skill-info {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
